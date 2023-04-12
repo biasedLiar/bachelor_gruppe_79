@@ -8,4 +8,4 @@
 
 module purge
 module load Anaconda3/2022.05
-python no-gptj-ft-1.py
+python no-gptj-ft.py
