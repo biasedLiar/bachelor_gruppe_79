@@ -8,4 +8,4 @@
 
 module purge
 module load Anaconda3/2022.05
-python no-t5-ft-3.py
+python no-t5-ft.py
