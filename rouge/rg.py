@@ -1,8 +1,5 @@
 import spacy
 import evaluate
-from datasets import load_dataset
-from transformers import pipeline
-import random
 
 nlp_nb = spacy.load("nb_core_news_sm")
 rouge_score = evaluate.load("rouge")
