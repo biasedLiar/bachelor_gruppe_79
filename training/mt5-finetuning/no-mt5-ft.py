@@ -2,6 +2,21 @@
 from huggingface_hub import login # login and notebook_login equivalent functionality
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, DataCollatorForSeq2Seq, Seq2SeqTrainer
+import rg
+import numpy as np
+
+def compute_metrics(eval_pred):
+    predictions, labels = eval_pred
+    # Decode generated summaries into text
+    decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
+    # Replace -100 in the labels as we can't decode them
+    labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
+    # Decode reference summaries into text
+    decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
+
+    # Compute ROUGE scores
+    result = rg.compareRouge(decoded_labels, decoded_preds)
+    return result
 
 def preprocess_function(x):
     model_inputs = tokenizer(
@@ -21,6 +36,7 @@ def preprocess_function(x):
 # load dataset and split into train and test
 
 model_checkpoint = "shivaniNK8/mt5-small-finetuned-cnn-news"
+#model_checkpoint = "mrm8488/mt5-base-finetuned-notes-summaries"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 
 print("Model gotten")
@@ -37,20 +53,22 @@ print(tokenized_datasets)
 
 model = AutoModelForSeq2SeqLM.from_pretrained(model_checkpoint)
 
-batch_size = 16 # default: 8
-num_train_epochs = 16 # default: 8
+batch_size = 8 # default: 8
+num_train_epochs = 8 # default: 8
 # Show the training loss with every epoch
 logging_steps = len(tokenized_datasets["train"]) // batch_size
 model_name = model_checkpoint.split("/")[-1]
 
 args = Seq2SeqTrainingArguments(
     output_dir=f"{model_name}-finetuned-NO3",
+    evaluation_strategy="epoch",
     learning_rate=5.6e-5,
     per_device_train_batch_size=batch_size,
     per_device_eval_batch_size=batch_size,
     weight_decay=0.01,
     save_total_limit=3,
     num_train_epochs=num_train_epochs,
+    predict_with_generate=True,
     logging_steps=logging_steps,
 )
 
@@ -68,8 +86,11 @@ trainer = Seq2SeqTrainer(
     train_dataset=tokenized_datasets["train"],
     data_collator=data_collator,
     tokenizer=tokenizer,
+    eval_dataset=tokenized_datasets["test"], # CHANGE TO VALIDATION WHEN READY
+    compute_metrics=compute_metrics,
 )
 
 trainer.train()
 trainer.save_model(f"{model_name}-MODEL-1")
+print(model_checkpoint)
 

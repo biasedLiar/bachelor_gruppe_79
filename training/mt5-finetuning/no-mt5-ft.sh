@@ -11,4 +11,6 @@
 
 module purge
 module load Anaconda3/2022.05
+pip install spacy
+python -m spacy download nb_core_news_sm
 python no-mt5-ft.py
