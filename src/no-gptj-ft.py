@@ -19,7 +19,7 @@ def preprocess_function(x):
 
 
 # load dataset and split into train and test
-dataset_file = "mail-summary.csv"
+dataset_file = "../training/gptj-finetuning/mail-summary.csv"
 no_summary_dataset = load_dataset("csv", data_files=dataset_file)
 no_summary_dataset = no_summary_dataset["train"].train_test_split(train_size=0.8, seed=22)
 

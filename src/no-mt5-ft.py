@@ -36,12 +36,18 @@ def preprocess_function(x):
 # load dataset and split into train and test
 
 model_checkpoint = "shivaniNK8/mt5-small-finetuned-cnn-news"
+#model_checkpoint = "chenhg8680/mt5-sum-v1"
 #model_checkpoint = "mrm8488/mt5-base-finetuned-notes-summaries"
+#model_checkpoint = "nestoralvaro/mt5-base-finetuned-xsum-mlsum___summary_text_google_mt5_base"
+#model_checkpoint = "nestoralvaro/mT5_multilingual_XLSum-finetuned-xsum-mlsum___summary_text"
+#model_checkpoint = "SGaleshchuk/mT5-sum-news-ua"
+
+
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 
 print("Model gotten")
 
-dataset_file = "mail-summary.csv"
+dataset_file = "../training/mt5-finetuning/mail-summary.csv"
 no_summary_dataset = load_dataset("csv", data_files=dataset_file)
 no_summary_dataset = no_summary_dataset["train"].train_test_split(train_size=0.8, seed=22)
 
