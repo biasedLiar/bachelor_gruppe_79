@@ -20,12 +20,14 @@ def compute_metrics(eval_pred):
 
 def preprocess_function(x):
     model_inputs = tokenizer(
-        x["mail"],
+        x["text"],
         max_length=max_input_length,
         truncation=True,
     )
+    if x["goldlabel"] != None:
+        x["label"] = x["goldlabel"]
     labels = tokenizer(
-        x["summary"],
+        x["label"],
         max_length=max_target_length,
         truncation=True
     )
@@ -47,8 +49,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 
 print("Model gotten")
 
-dataset_file = "../training/mt5-finetuning/mail-summary.csv"
-no_summary_dataset = load_dataset("csv", data_files=dataset_file)
+dataset_file = "BiasedLiar/nor_email_sum"
+no_summary_dataset = load_dataset(dataset_file)
 no_summary_dataset = no_summary_dataset["train"].train_test_split(train_size=0.8, seed=22)
 
 max_input_length = 512
