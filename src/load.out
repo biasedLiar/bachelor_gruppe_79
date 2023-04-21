@@ -1,0 +1,470 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: spacy in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (3.5.2)
+Requirement already satisfied: pathy>=0.10.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (0.10.1)
+Requirement already satisfied: catalogue<2.1.0,>=2.0.6 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (2.0.8)
+Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (1.0.4)
+Requirement already satisfied: typer<0.8.0,>=0.3.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (0.7.0)
+Requirement already satisfied: thinc<8.2.0,>=8.1.8 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (8.1.9)
+Requirement already satisfied: jinja2 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (2.11.3)
+Requirement already satisfied: langcodes<4.0.0,>=3.2.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (3.3.0)
+Requirement already satisfied: requests<3.0.0,>=2.13.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (2.27.1)
+Requirement already satisfied: smart-open<7.0.0,>=5.2.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (6.3.0)
+Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (3.0.12)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (2.0.7)
+Requirement already satisfied: numpy>=1.15.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (1.21.5)
+Requirement already satisfied: srsly<3.0.0,>=2.4.3 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (2.4.6)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (1.0.9)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (3.0.8)
+Requirement already satisfied: wasabi<1.2.0,>=0.9.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (1.1.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,<1.11.0,>=1.7.4 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy) (1.10.7)
+Requirement already satisfied: packaging>=20.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (21.3)
+Requirement already satisfied: setuptools in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (61.2.0)
+Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy) (4.64.0)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from packaging>=20.0->spacy) (3.0.4)
+Requirement already satisfied: typing-extensions>=4.2.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from pydantic!=1.8,!=1.8.1,<1.11.0,>=1.7.4->spacy) (4.5.0)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy) (1.26.9)
+Requirement already satisfied: idna<4,>=2.5 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy) (2.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy) (2021.10.8)
+Requirement already satisfied: blis<0.8.0,>=0.7.8 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from thinc<8.2.0,>=8.1.8->spacy) (0.7.9)
+Requirement already satisfied: confection<1.0.0,>=0.0.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from thinc<8.2.0,>=8.1.8->spacy) (0.0.4)
+Requirement already satisfied: click<9.0.0,>=7.1.1 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from typer<0.8.0,>=0.3.0->spacy) (8.0.4)
+Requirement already satisfied: MarkupSafe>=0.23 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from jinja2->spacy) (2.0.1)
+Defaulting to user installation because normal site-packages is not writeable
+Collecting nb-core-news-sm==3.5.0
+  Downloading https://github.com/explosion/spacy-models/releases/download/nb_core_news_sm-3.5.0/nb_core_news_sm-3.5.0-py3-none-any.whl (12.5 MB)
+Requirement already satisfied: spacy<3.6.0,>=3.5.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from nb-core-news-sm==3.5.0) (3.5.2)
+Requirement already satisfied: langcodes<4.0.0,>=3.2.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (3.3.0)
+Requirement already satisfied: preshed<3.1.0,>=3.0.2 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (3.0.8)
+Requirement already satisfied: smart-open<7.0.0,>=5.2.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (6.3.0)
+Requirement already satisfied: catalogue<2.1.0,>=2.0.6 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.0.8)
+Requirement already satisfied: spacy-legacy<3.1.0,>=3.0.11 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (3.0.12)
+Requirement already satisfied: murmurhash<1.1.0,>=0.28.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.0.9)
+Requirement already satisfied: packaging>=20.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (21.3)
+Requirement already satisfied: numpy>=1.15.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.21.5)
+Requirement already satisfied: wasabi<1.2.0,>=0.9.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.1.1)
+Requirement already satisfied: jinja2 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.11.3)
+Requirement already satisfied: cymem<2.1.0,>=2.0.2 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.0.7)
+Requirement already satisfied: spacy-loggers<2.0.0,>=1.0.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.0.4)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,<1.11.0,>=1.7.4 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.10.7)
+Requirement already satisfied: srsly<3.0.0,>=2.4.3 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.4.6)
+Requirement already satisfied: pathy>=0.10.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (0.10.1)
+Requirement already satisfied: thinc<8.2.0,>=8.1.8 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (8.1.9)
+Requirement already satisfied: typer<0.8.0,>=0.3.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (0.7.0)
+Requirement already satisfied: setuptools in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (61.2.0)
+Requirement already satisfied: tqdm<5.0.0,>=4.38.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (4.64.0)
+Requirement already satisfied: requests<3.0.0,>=2.13.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.27.1)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from packaging>=20.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (3.0.4)
+Requirement already satisfied: typing-extensions>=4.2.0 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from pydantic!=1.8,!=1.8.1,<1.11.0,>=1.7.4->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (4.5.0)
+Requirement already satisfied: idna<4,>=2.5 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (3.3)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (1.26.9)
+Requirement already satisfied: certifi>=2017.4.17 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2021.10.8)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from requests<3.0.0,>=2.13.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.0.4)
+Requirement already satisfied: confection<1.0.0,>=0.0.1 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from thinc<8.2.0,>=8.1.8->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (0.0.4)
+Requirement already satisfied: blis<0.8.0,>=0.7.8 in /cluster/home/eliaseb/.local/lib/python3.9/site-packages (from thinc<8.2.0,>=8.1.8->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (0.7.9)
+Requirement already satisfied: click<9.0.0,>=7.1.1 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from typer<0.8.0,>=0.3.0->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (8.0.4)
+Requirement already satisfied: MarkupSafe>=0.23 in /cluster/apps/eb/software/Anaconda3/2022.05/lib/python3.9/site-packages (from jinja2->spacy<3.6.0,>=3.5.0->nb-core-news-sm==3.5.0) (2.0.1)
+[38;5;2m✔ Download and installation successful[0m
+You can now load the package via spacy.load('nb_core_news_sm')
+Found cached dataset csv (/cluster/home/eliaseb/.cache/huggingface/datasets/BiasedLiar___csv/BiasedLiar--nor_email_sum-b54d9abff15ab424/0.0.0/6b34fb8fcf56f7c8ba51dc895bfa2bfbe43546f190a60fcf74bb5e8afdcc2317)
+
+  0%|          | 0/3 [00:00<?, ?it/s]
+100%|██████████| 3/3 [00:00<00:00, 740.26it/s]
+Hei, Jeg vil gjerne tilby våre musikktjenester til deg. Vi kan tilby alt fra levende musikk til DJ- og lydproduksjonstjenester. Vennligst la meg vite om du er interessert i å lære mer om hva vi kan tilby. Vennlig hilsen, Andreas
+
+Tilbud av musikktjenester.
+
+[{'summary_text': 'Få informasjon om musikktjenester og oppfordring til å besøke nettstedet for'}]
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[{'summary_text': 'Oppdatering om frist for å sende inn notater etter vårt siste møte.'}, {'summary_text': 'Invitasjon til statusoppdatering på prosjektet og oppfordring til å fullføre innenfor tid'}, {'summary_text': 'Få tips til å få bedre søvnkvalitet hver natt og oppleve'}, {'summary_text': 'Få tips til å bygge bedre forhold og skape bedre forhold.'}, {'summary_text': 'Oppdatering på prosjektet og oppfordring til å gi beskjed.'}, {'summary_text': 'Få beskjed om prosessen for å bytte produktet mot en annen'}, {'summary_text': 'Oppdatering om kundetilfredshetsundersøkelse og be om deltagelse hvis du ikke allerede har'}, {'summary_text': 'Oppdatering om helsefordeler for ansatte og hvordan vi jobber for å '}, {'summary_text': 'Få bekreftelse på innleveringsfrist for prosjektet og oppfordring til å '}, {'summary_text': 'Oppdatering om astrologisk veiledning og hvordan det har påvirket mitt syn på '}, {'summary_text': 'Få tips til å ta i bruk sosiale medier for å fremme'}, {'summary_text': 'Invitasjon til avskjedsmøte og oppfordring til å ta kontakt.'}, {'summary_text': 'Oppdatering om status på prosjektet og oppfordring til å gi beskjed.'}, {'summary_text': 'Oppdatering om partnerskapet med en annen virksomhet og hvordan vi har jobbet sammen'}, {'summary_text': 'Invitasjon til konkurrentanalyse og oppfordring til å se gjennom informasjonen på intranettet'}, {'summary_text': 'Oppdatering om ansvar og ansvarsfordeling i selskapet.'}, {'summary_text': 'Invitasjon til stillingen i vårt firma.'}, {'summary_text': 'Oppdatering av nye selvutviklingskurs med en beskrivelse av nytt selvutviklingskurs og en opp'}, {'summary_text': 'Få tips til å skape et kunstnerisk uttrykk gjennom design og skape'}, {'summary_text': 'Oppdatering om viktige møtet i morgen klokken 10.'}, {'summary_text': 'Oppdatering av nye futuristiske kunstutstilling med en fascinerende samling av verk som utforsker teknologi'}, {'summary_text': 'Få tips til å bygge en sterk og sunn familie.'}, {'summary_text': 'Oppdatering av avbestilling av våre tjenester og en bekreftelse på mottak av'}, {'summary_text': 'Få informasjon om nye spill om en måned.'}, {'summary_text': 'Oppdatering om permisjon fra jobben fra mandag til onsdag i neste uke på'}, {'summary_text': 'Oppdatering om frist for å levere budsjettet for bryllupet er den 2.'}, {'summary_text': 'Invitasjon til å informere om endringer i bransjereguleringene og opp'}, {'summary_text': 'Invitasjon til å oppdatere kontaktopplysningene dine med den nye adressen og inform'}, {'summary_text': 'Invitasjon til Fantasy Premier League-sesongen og oppfordring til å lese videre for mer'}, {'summary_text': 'Få tips til å takle depresjon og andre mentale lidelser og oppleve'}, {'summary_text': 'Få feilinformert av ansatte om produktet og oppfordring til å kjøpe'}, {'summary_text': 'Invitasjon til nye treningsprogram for ansatte.'}, {'summary_text': 'Invitasjon til Twitter chat neste uke.'}, {'summary_text': 'Få nyheter om lokale trafikkendringer som påvirker din daglige pendling'}, {'summary_text': 'Oppdatering om bedriftskultur og verdier.'}, {'summary_text': 'Oppdatering om anbud for bygging av et nytt kontorbygg og oppfordring til å'}, {'summary_text': 'Oppdatering om budsjettet og hvordan vi kan optimalisere budsjettet'}, {'summary_text': 'Få tilgang til eksklusive arrangementer og begivenheter som belønning for lojalitet'}, {'summary_text': 'Invitasjon til opplæring i anleggsmaskiner neste uke.'}, {'summary_text': 'Oppdatering etter forskningsmøte og oppfordring til å ta hensyn til innspill når'}, {'summary_text': 'Få opplæring i IT for dine ansatte og oppfordring til å gi be'}, {'summary_text': 'Oppdateringer av bedriftens etikk- og integritetspolicy og oppfordring til å'}, {'summary_text': 'Invitasjon til HR-møte og oppfordring til å møte opp i tide og'}, {'summary_text': 'Invitasjon til frivillig arbeid i lokalsamfunnet og oppfordring til å finne mer'}, {'summary_text': 'Invitasjon til møtet neste uke.'}, {'summary_text': 'Få tips til å håndtere konflikter i et forhold og bygge en'}, {'summary_text': 'Invitasjon til møte i New York for å diskutere muligheter for å'}, {'summary_text': 'Oppdatering om parkeringsplassen forbeholdt ansatte og at det er forbeholdt ansatte'}, {'summary_text': 'Oppdatering om avskjedsintervju og tilbakemelding av organisasjon og din tid'}, {'summary_text': 'Oppdatering om ferieplanene mine og oppfordring til å levere prosjektet'}, {'summary_text': 'Få informasjon om musikktjenester og oppfordring til å besøke nettstedet for'}, {'summary_text': 'Få eksklusive utvalg av fotballutstyr til redusert pris.'}, {'summary_text': 'Oppdatering om tidspunkt for møte og agenda.'}, {'summary_text': 'Få tips til å oppdage nye artister og støtte nye artister.'}, {'summary_text': 'Invitasjon til bedriftens sommerfest med mat, drikke og underholdning'}, {'summary_text': 'Invitasjon til å bestille din første PT-time denne uken.'}, {'summary_text': 'Få tips til å lage din egen film med mobiltelefonen din.'}, {'summary_text': 'Få tilbakemeldinger og tips for forbedring'}, {'summary_text': 'Invitasjon til potensiell mulighet for samarbeid med Brasil og oppfordring til å ta'}, {'summary_text': 'Oppdatering om viktigheten av bedriftskultur og verdier.'}, {'summary_text': 'Invitasjon til Nike lanserer en ny kolleksjon av sportstøy og -utstyr.'}, {'summary_text': 'Oppdatering om virtuelle møte og oppfordring til å sjekke lenken til'}, {'summary_text': 'Oppdatering av feil i koden og oppfordring til å sende inn et skjema'}, {'summary_text': 'Oppdatering i rommet for neste forelesning.'}, {'summary_text': 'Få frivillige muligheter som kan interessere deg.'}, {'summary_text': 'Få beskjed om møte neste uke kl. 10.'}, {'summary_text': 'Få statusoppdatering for prosjekt Zeta og oppfordring til å holde oppdatert om'}, {'summary_text': 'Invitasjon til mentor for ansatte.'}, {'summary_text': 'Få erfaring med å redefinere livsmål og oppleve endringer '}, {'summary_text': 'Få nyheter om utviklingen av nye lokale bedrifter og arbeidsplasser i '}, {'summary_text': 'Invitasjon til Mars-planet med en ny rover til Mars for å undersøke'}, {'summary_text': 'Oppdatering om Premier League-resultater og en oversikt over de siste kampene og la'}, {'summary_text': 'Få tips til å bli en mentor og bidra til en positiv forandring i '}, {'summary_text': 'Oppdatering på deltakelse i vår undersøkelse og oppfordring til å svare på'}, {'summary_text': 'Invitasjon til spesielle tilbud på utvalgte varer for mandag morgen kl. 10'}, {'summary_text': 'Få muligheter for avslapning og rekreasjon for alle innbyggere.'}, {'summary_text': 'Invitasjon til påskekonkurranse med informasjon om konkurransen og oppfordring til å vinne'}, {'summary_text': 'Få erfaring med å bruke hudpleierutiner som inneholder vitamin C og hvordan'}, {'summary_text': 'Invitasjon til klientavtale-mal og oppfordring til å se vedlegg for detaljer'}, {'summary_text': 'Invitasjon til deltakelse i vår siste immaterielle eiendoms workshop med stor pris på din'}, {'summary_text': 'Få utvalg av fotballreiser til noen av de beste destinasjonene i verden.'}, {'summary_text': 'Få tips til å lage morsomme og kreative memes for bedriften din på'}, {'summary_text': 'Få tips til å få den beste pizzaen i byen.'}, {'summary_text': 'Oppdatering om parkering på kontoret og oppfordring til å besøke kontoret.'}, {'summary_text': 'Invitasjon til å delta i fokusgruppe om kundetilfredshet for å diskutere'}, {'summary_text': 'Oppdatering om sikkerhetskontrollen på flyplassen for kommende flyreise til Zurich den 22. mai'}, {'summary_text': 'Få godkjenning ferieforespørsel for neste måned.'}, {'summary_text': 'Oppdatering av åpningstider og oppfordring til å sjekke nettsider for de'}, {'summary_text': 'Oppdatering om utfordringer med prosjektet og oppfordring til å gi en ekstra uke'}, {'summary_text': 'Oppdatering av arbeidsprosedyrer og oppfordring til å besøke nettstedet.'}, {'summary_text': 'Få tips til å finne de fem beste bøkene om personlig utvikling og oppleve'}, {'summary_text': 'Få tilbakemelding på salgsresultater for Q4 og tilbakemelding på observasjoner.'}, {'summary_text': 'Oppdatering om endrede åpningstider i påskeferien.'}, {'summary_text': 'Få tilbakemeldinger og tips til å forbedre karakteren og forbedre seg videre.'}, {'summary_text': 'Invitasjon til fotoutstilling av arkitekturverk på 25/12/2025 kl. Klokken 1 på Dron'}, {'summary_text': 'Invitasjon til å bekrefte at du har blitt akseptert ved Norges'}, {'summary_text': 'Invitasjon til endring i arbeidstidene og mulighet til å sjekke'}, {'summary_text': 'Invitasjon til å delta i bedriftskultur- og verdierworkshop med verdifull'}, {'summary_text': 'Få informasjon om de siste bransjenyhetene.'}, {'summary_text': 'Oppdatering om å sende inn kvitteringer for utlegg.'}, {'summary_text': 'Invitasjon til bedrifts CSR-policy og hvordan vi arbeider for å ta'}, {'summary_text': 'Invitasjon til gratis prøveuke på språkkurs og oppfordring til å registrere deg snar'}, {'summary_text': 'Få tips til å løse globale problemer som klimaendringer og helseutfordring'}, {'summary_text': 'Oppdatering om ny funksjonalitet til vår nettside og oppfordring til å besøk'}, {'summary_text': 'Oppdatering på vårt pågående tverrfaglige prosjekt og oppfordring til alle '}, {'summary_text': 'Oppdatering av nye hotellet med en beskrivelse av hotellet og en oppfordring til '}, {'summary_text': 'Oppdatering om retningslinjer og forholdsregler som er gitt av helsemyndighetene for'}, {'summary_text': 'Opdagelse av en ny planet i vårt solsystem og oppfordring til å'}, {'summary_text': 'Få tips til å lære mer om forskjellige religioner og trosretninger og '}, {'summary_text': 'Oppdatering av arbeidsplanen for produksjonsteamet for den kommende måneden.'}, {'summary_text': 'Oppdatering av ny TV-serie å se på, og en oppfordring til å'}, {'summary_text': 'Invitasjon til å dele våre erfaringer fra ferie og oppleve opplevelser'}, {'summary_text': 'Oppdatering av ny live chat-tjeneste for kundesupport.'}, {'summary_text': 'Invitasjon til nyhetsbrev og oppfordring til å abonnere på nyhetsbrevet og besøk'}, {'summary_text': 'Oppdatering av tidsplanen for IT-prosjektet og oppfordring til å sjekke tids'}, {'summary_text': 'Få erfaring med å bruke en ny reiseapp som har blitt anbefalt til'}, {'summary_text': 'Invitasjon til å sjekke ut vårt utvalg av utemøbler, sol'}, {'summary_text': 'Få tips til å kle deg for din kroppsform og størrelse.'}, {'summary_text': 'Oppdatering om avtale helsekontrollen din.'}, {'summary_text': 'Invitasjon til GitHub-konferanse neste måned.'}, {'summary_text': 'Få tips til å inkludere matvarer i kostholdet ditt for bedre'}, {'summary_text': 'Få informasjon om møtet i morgen kl. 14:00.'}, {'summary_text': 'Oppdatering om sykemelding fra legen min for helsetilstand og en beskrivelse av helseproblemer som'}, {'summary_text': 'Oppdatering på Lean-prosjekt og oppfordring til å dele mer informasjon om resultaten'}, {'summary_text': 'Oppdatering til virtuelle møte og oppfordring til å sende en lenke for '}, {'summary_text': 'Invitasjon til å planlegge et møte med dine kolleger i London for'}]
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Påminnelse om frist for innsending av notater etter møte og oppfordring til å sende inn i tide.
+Påminnelse om fristen for å sende inn notater etter siste møte.
+
+Oppdatering om status på prosjektet og forsikring om at arbeidet går etter planen.
+Oppdatering på statusen på prosjektet.
+
+Få tips til å forbedre søvnkvaliteten din og oppleve en mer uthvilt hverdag.
+Tips om hvordan du kan få bedre søvnkvaliteten din.
+
+Få inspirasjon til forhold og dating med vår liste over de fem beste bøkene om kjærlighet og forhold.
+Liste over de fem beste bøkene om kjærlighet og forhold.
+
+Statusoppdatering på prosjektet med positivt budskap og oppfordring til å gi beskjed hvis det er noen spørsmål eller bekymringer.
+Prosjektet går etter planen.
+
+Bytte av produkt kjøpt i butikken på grunn av feil størrelse.
+Bytte av produkt som var kjøpt i feil størrelse.
+
+Påminnelse om kundetilfredshetsundersøkelsen og oppfordring til å delta
+Påminnelse om kundetilfredshetsundersøkelse.
+
+Informasjon om helsefordeler for ansatte og sikring av tilgang til de beste helsetjenestene
+Informasjon om helsefordeler for ansatte. Se vedlegg for detaljer.
+
+Bekreftelse på innleveringsfrist fra Birgitte til Håkon: Bekrefter innleveringsfristen for prosjektet i en kort e-post.
+Bekreftelse på at innleveringsfristen for prosjektet er satt til fredag kl. 16.00.
+
+Min erfaring med å prøve ut astrologisk veiledning.
+Jeg vil anbefale astrologisk veiledning til alle som er på utkikk etter å få innsikt i sin personlighet og livsvei.
+
+Få tips til å ta i bruk sosiale medier for å fremme sosiale saker og spre bevissthet om viktige saker og problemstillinger.
+Tips om hvordan å bruke sosiale medier for å fremme sosiale saker.
+
+Innkalling til avskjedsmøte og oppfordring til å møte opp til avtalt tid.
+Innkalling til avskjedsmøte den 19. mai kl. 10. på rom 34A, Gløshaugen.
+
+E-post som gir en oppdatering om statusen på et prosjekt.
+Oppdatering om statusen på prosjektet vårt, som er i rute med tidsplanen.
+
+Oppdatering om partnerskapet vårt med en annen virksomhet og hvordan vi jobber sammen for å nå våre mål
+Oppdatering om partnerskapet vårt med en annen virksomhet og hvordan vi har jobbet sammen. Se vedlegg for detaljer.
+
+Informasjon om konkurrentanalyse, oppdatert informasjon.
+Informon om vår konkurrentanalyse.
+
+Spørsmål om ansvar og ansvarsfordeling i selskapet og en forespørsel om styrets rolle i forhold til ledelsen og ansattes og aksjeeieres ansvar
+Spørsmål om styrets rolle i forhold til ledelsen, og hvilket ansvar de ansatte og aksjeeierne har.
+
+Gratulasjon til en kandidat som har blitt akseptert til stillingen i et firma, med informasjon om stillingen og forberedelse til første arbeidsdag.
+Gratulerer med å bli akseptert til stilling i vårt firma. Se vedlagt dokument for detaljer om stillingen og førte arbeidsdag.
+
+Anmeldelse av nytt selvutviklingskurs.
+Anmeldelse av nytt selvutviklingskurs. Alt i alt var det en flott opplevelse som anbefales til alle som ønsker en ny måte å forbedre seg selv.
+
+Få tips til å utvikle din kreative side og skape design som reflekterer din personlige stil og visjon.
+Tips om hvordan skape et kunstnerisk utrykk gjennom design.
+
+Påminnelse om viktig møte i morgen klokken 10.
+Påminnelse om viktig møte i morgen klokken 10.
+
+Anmeldelse av ny futuristisk kunstutstilling.
+Anmeldelse av ny futuristisk kunstutstilling.
+
+Få inspirasjon til forhold og familieliv med våre tips for å bygge en sunn og lykkelig familie.
+Tips om hvordan du kan bygge en sterk og sunn familie.
+
+Bekreftelse på avbestilling av tjenester og takk for samarbeid fra Alphabet kundeservice.
+Bekreftelse på avbestilling av våre tjenester.
+
+Lanseringsdato for nytt spill kunngjort om en måned med flere spillmoduser, bonuser og forbedringer!
+Kunngjøring om at vårt nye spill lanseres om en måned.
+
+Forespørsel om permisjon og en forespørsel om prosessen og tidspunktet for svar på forespørselen
+Forespørsel om permisjon fra jobben fra mandag til onsdag i neste uke på grunn av personlige grunner. Hva er prosessen og når mottar jeg svar på min forespørsel?
+
+Påminnelse om frist for budsjettinnlevering og oppfordring til å levere innen fristen.
+Påminnelse om at fristen for å levere budsjettet for bryllupet er den 2. mars.
+
+Informasjon om endringer i bransjereguleringer, oppdatert informasjon.
+Informasjon om endringer i bransjereguleringene. Se gjennom informasjonen på intranettet.
+
+Informasjon om endring av e-postadresse i forbindelse med en oppdatering av bedriftens e-postsystem.
+Din e-postadresse endres fra abc11@bedrift.no til xyz13@nybedrift.no. Du vil fortsatt ha tilgang til alle e-postene dine.
+
+Fantasy Premier League-sesongen starter nå og oversikt over regler, priser og hvordan du kan delta.
+Informasjon om start på Fantasy Premier League-sesong med oversikt over regler, priser og hvordan du kan delta.
+
+Få tips til å takle depresjon og andre mentale lidelser og oppleve en mer positiv og avslappet mental tilstand.
+Tips om hvordan du kan takle depresjon og andre mentale lidelser.
+
+Klage om feilinformasjon fra ansatt og ønske om at selskapet sørger for korrekt informasjon.
+Klage om feilinformasjon fra ansatte som førte til kjøp av feil produkt.
+
+Treningsprogram for ansatte
+Informasjon om nytt treningsprogram for ansatte. Sjekk e-posten din for mer informasjon om deltagelse i programmet.
+
+Invitasjon til vår Twitter chat med spesiell gjest og samtaler om emner som er relevante for vår bedrift og bransjen generelt.
+Invitasjon til vår Twitter chat neste uke. En spesiell gjest vil delta. Gi oss beskjed om du vil delta.
+
+Få informasjon om lokale trafikkendringer og tips til hvordan du kan tilpasse deg endringene for en mer effektiv og stressfri reise.
+Les våre nyheter om lokale trafikkendringer som påvirker ditt område.
+
+En oppdatering på vår bedriftskultur og verdier og forpliktelse til å lytte til våre ansatte og gjøre nødvendige endringer for å opprettholde vår kultur og verdier.
+En oppdatering om vår bedriftskultur og verdier. En undersøkelse av nåværende situasjon viste positive resultater. Forbedringer vil fortsette.
+
+Anbud for bygging av nytt kontorbygg, erfaren entreprenør søkes.
+Forespørsel om anbud for bygging av et nytt kontorbygg. En erfaren og pålitelig entreprenør for prosjektet søkes.
+
+Spørsmål om budsjettet og forespørsel om å avtale møte for å diskutere muligheter for optimalisering.
+Ønske om et møte for å diskutere budsjettet og hvordan det kan optimaliseres.
+
+Ny tillegg i lojalitetsprogrammet: Eksklusive arrangementer og begivenheter som belønning for din lojalitet.
+Ny tillegg i lojalitetsprogram: Eksklusive arrangementer og begivenheter som belønning, med oppdateringer via e-post.
+
+Innkalling til opplæring i anleggsmaskiner for å gi den nødvendige opplæringen for å håndtere og bruke anleggsmaskiner på en sikker og effektiv måte
+Invitasjon til opplæring i anleggsmaskiner neste uke. Ta kontakt for mer informasjon og registrering.
+
+Tilbakemelding etter forskningsmøte og takk for deltakelse og innspill.
+Takk for din deltakelse på vårt siste forskningsmøte.
+
+Invitasjon til IT-opplæring for ansatte og varsling om grunnleggende teknikker og programvare.
+Vi vil gjerne gi opplæring i IT for dine ansatte. Ta en titt og gi beskjed hvis du er interessert.
+
+Oppdateringer av bedriftens etikk- og integritetspolicy inkluderer flere tiltak for å styrke etterlevelsen av policyen, inkludert økt opplæring og rapportering av brudd på policyen.
+Bedriftens etikk- og integritetspolicy oppdateres. Flere tiltak for å styrke etterlevelsen av denne policyen innføres.
+
+Møteagenda for det kommende HR-møtet.
+Møteagendaen for det kommende HR-møtet er ferieavvikling, endringer i arbeidsvilkårene og eventuelle nye prosjekter.
+
+Invitasjon til frivillig arbeid i lokalsamfunnet
+Invitasjon til å delta i vårt neste frivilige arbeid i lokalsamfunnet.
+
+Dette er en bekreftelse på møtetidspunktet vårt neste uke, der vi vil møtes på kontoret vårt kl. 14:00.
+Ønske om å bekrefte møtet vårt neste uke på kontoret vårt kl.14:00.
+
+Få tips til å håndtere konflikter og oppleve en mer harmonisk og tilfredsstillende forhold.
+Tips om hvordan håndtere konflikter i et forhold.
+
+Invitasjon til møte i New York fra Texas Instruments ledelse.
+Invitasjon til møte i New York fra Texas Instruments ledelse.
+
+Påminnelse om parkeringsplass og viktigheten av å parkere på tildelt område.
+Påminnelse om at parkeringsplassen er forbeholdt ansatte.
+
+Forespørsel om avskjedsintervju og oppfordring til å ta kontakt hvis interessert.
+Forespørsel om et avskjedsintervju.
+
+En vennlig oppdatering om ferieplanene og en påminnelse om prosjektfristen
+Ferieplanen min er å dra til New York i to uker. Også minner jeg deg om at fristen for å levere prosjektet er om to uker.
+
+Tilbud om musikktjenester med informasjon om muligheter for levende musikk, DJ og lydproduksjon.
+Tilbud av musikktjenester.
+
+Tilbud på fotballutstyr til redusert pris og varsling om utstyrets fordeler.
+Tilbud på eksklusive utvalg av fotballutstyr til redusert pris.
+
+Påminnelse om tidspunkt for møte og varsling om sjekk av tidsplan for informasjon om møtested og agenda.
+Påminnelse om tidspunkt for kommende møte, sjekk tidsplan for informasjon om møtested og agenda.
+
+Få tips til å oppdage nye artister og støtte musikken du elsker.
+Tips om hvordan du kan oppdage og støtte nye og lovende artister.
+
+Invitasjon til bedriftens sommerfest på stranden neste fredag kl. 18.
+Invitasjon til bedriftens sommerfest på stranden neste fredag kl. 18. Det vil bli mat, drikke og underholdning, kle deg i sommerklær.
+
+Tilbud på PT-timer fra SATS kundeservice: Informerer om kampanje på PT-timer og tilbyr kunden en rabatt på sin første time samt oppfordrer kunden til å ta kontakt for mer informasjon.
+Tilbud om rabatt på første PT-time
+
+Få tips til å lage din egen film med mobiltelefonen din og skape en unik og personlig historie som vil imponere dine venner og familie.
+Tips om hvordan du kan lage din egen film med mobiltelefonen din.
+
+Spørsmål om karakter på siste innlevering og forespørsel om tilbakemeldinger og tips for forbedring.
+Jeg lurer på karakteren på min siste innlevering. Jeg ønsker tilbakemeldinger og hvordan jeg kan forbedre meg.
+
+Potensiell mulighet for samarbeid med Brasil fra Sony ledelse.
+Informasjon om potensielt samarbeid med Brasil og ønske om å diskutere mulighetene nærmere.
+
+Viktigheten av vår bedriftskultur og verdier og oppfordring til å opprettholde og styrke vår kultur og verdier.
+Påminnelse om viktigheten av våre bedriftskultur og verdier.
+
+Nike lanserer ny kolleksjon av sportstøy og -utstyr og oppfordring til å besøke nettsiden for å se hele kolleksjonen.
+Informasjon om at Nike lanserer ny kolleksjon av sportstøy og utstyr.
+
+Påminnelse om virtuelt møte i morgen og oppfordring til å sjekke e-posten for lenke og delta på tid.
+Påminnelse om virtuelt møte i morgen Sjekk e-posten din for lenken til møtet.
+
+Beskjed om en feil i koden og forespørsel om å rette den.
+Oppdaget feil i koden når brukeren prøver å sende inn et skjema.
+
+Informasjon om en endring i rommet for neste forelesning og anmodning om å se på undervisningsplanen for den oppdaterte informasjonen.
+Forelesningsrom for neste forelesning er endret. Se undervisningsplan for oppdatert rom.
+
+Tilbud om frivillig arbeid som en mulighet til å bidra til lokalsamfunnet og lære nye ferdigheter
+Tilbud om frivillig arbeid.
+
+Påminnelse om møte neste uke torsdag kl. 10.
+Påminnelse om møte neste uke torsdag kl. 10.
+
+Statusoppdatering for prosjekt Zeta, alt går etter planen og vi vil fortsette å holde dere oppdatert.
+Vi er halvveis gjennom prosjekt Zeta og alt går etter planen. Eventuelle endringer i planen vil bli informert om.
+
+Invitasjon til å bli mentor for våre ansatte med oppfordring til alle ansatte om å delta og gi tilbakemelding på programmet og en påskjønnelse for å hjelpe våre ansatte med å utvikle seg og vokse i sine karrierer.
+Invitasjon til å bli mentor for våre ansatte. Som en takk for din deltakelse, vil vi gi deg en spesiell gave. Gi oss beskjed om du vil delta.
+
+Min erfaring med å redefinere mine livsmål
+Min erfaring med å redefinere mine livsmål.
+
+Få informasjon om nyheter i lokal næringsliv og arbeidsmarkedet og hvordan det kan påvirke deg.
+Nyheter om utvikling av nye lokale bedrifter og arbeidsplasser i ditt område.
+
+Nytt oppdrag til Mars-planeten.
+Kunngjøring om oppdrag til Mars-planeten.
+
+Oppdatering om Premier League-resultater og oversikt over de siste kampene og lagenes nåværende posisjoner i tabellen.
+Oppdatering om Premier League resultater.
+
+Få tips til å bli en mentor og bidra til en positiv forandring i samfunnet på en meningsfull måte.
+Tips om hvordan bli mentor og bidra til en positiv forandring i samfunnet.
+
+Bekreftelse på deltakelse i undersøkelse og takk for tilbakemelding fra Cisco kundeservice.
+Bekreftelse på mottak av din deltakelse i vår undersøkelse.
+
+Informasjon om spesielle tilbud på utvalgte varer for mandag morgen og oppfordring til å besøke nettsiden for bestilling før kl. 10 fra Nintendo salg.
+Informasjon om spesielle tilbud hos Nintendo mandag morgen. Besøk nettsiden vår før kl. 10 for å se utvalget.      
+
+Ny bypark åpner snart.
+Kunngjøring av ny bypark som snart åpner med lekeplass, sitteplasser og mange grøntområder. Plassen tilbyr avslapping og rekreasjon for alle byens innbyggere.
+
+Varsel om påskekonkurranse med mulighet for å vinne påskegodterier og sjokolade
+Informasjon om påskekonkurranse med mulighet for å vinne påskegodterier og sjokolade.
+
+Min erfaring med å bruke hudpleierutiner med vitamin C
+Jeg vil dele min personlige historie med å bruke hudpleierutiner som inneholder vitamin C. Jeg vil anbefalle produkter som inneholder vitamin C.
+
+Informasjon om nytt klientavtale-mal for bruk fra nå av
+Informasjon om et nytt klientavtale-mal som skal brukes fra nå av.
+
+Takk for din deltakelse i vår siste immaterielle eiendoms workshop og påskjønnelse for din innsats.
+Som takk for din deltakelse i vår siste immaterielle eiendomsworkshop vil vi gi deg en spesiell gave.
+
+Tilbud på fotballreiser til noen av de beste destinasjonene i verden og varsling om inkluderte billetter og hotellopphold.
+Tilbud på utvalg av fotballreiser. Pakkene inkluderer billetter til kamper og hotellopphold.
+
+Få tips til å lage morsomme og kreative memes for bedriften din og engasjere dine følgere på en humoristisk måte.
+Tips om hvordan lage memes for å markedsføre bedriften.      
+
+Få vår anmeldelse av den beste pizzaen i byen og finn ut hvor du kan få den.
+Anmeldelser av pizzaen fra flere resturanter i byen.
+
+Påminnelse om at parkering på kontoret kun er tillatt for ansatte.
+Parkering på kontoret er kun tillat for ansatte.
+
+Invitasjon til fokusgruppe om kundetilfredshet og ønske om deltagelse
+Invitasjon til fokusgruppe om kundetilfredshet. Se vedlegg for detaljer og svar tilbake hvis du ønsker å delta.
+
+Påminnelse om sikkerhetskontroll på flyplassen og oppfordring til å ha dokumenter og gjenstander klare.
+Påminnelse om sikkerhetskontrollen på flyplassen for din kommende flyreise til Zurich den 22. mai.
+
+Godkjenning av ferieforespørsel for neste måned og tilbud om å svare på eventuelle spørsmål.
+Godkjennelse av ferieforespørsel for neste måned.
+
+Informasjon om endring av åpningstider og oppfordring til å sjekke nettsidene for oppdaterte åpningstider.
+Informasjon om endring av åpningstider.
+
+Tilbud om en utvidet frist etter å ha forstått at mottakeren har hatt utfordringer med prosjektet
+Tilbud om utvidet frist på prosjektet.
+
+Informasjon om endringer i arbeidsprosedyrer med dato for når endringene vil tre i kraft og liste over endringer, og oppfordring til å gi beskjed hvis det er noen spørsmål eller bekymringer.
+Informasjon om endringer i arbeidsprosedyrene som vil tre i kraft fra 31. oktober.
+
+Få inspirasjon til personlig utvikling med vår liste over de fem beste bøkene om personlig utvikling.
+Liste over de fem beste bøkene om personlig utvikling.
+
+Rapportering av salgsresultater for Q4, tilbakemelding ønsket.
+Ønsker tilbakemelding på rapporten for salgsresultatene for Q4.  
+
+Varsel om endrede åpningstider i påsken på grunn av påskeferien
+Påminnelse om endrede åpningstider i påsken.
+
+Spørsmål om karakter på nylig avholdt eksamen og forespørsel om tilbakemelding og tips for forbedring.
+Hvordan gjorde jeg det på eksamen og hva kan jeg gjøre for å forbedre meg videre?
+
+Fotoutstilling av arkitekturverk.
+Invitasjon til fotoutstilling av arkitekturverk 25/12/2025 kl. 1 på Dronningens gate 9, Kristiansand.
+
+Bekreftelse på opptak ved Norges Handelshøyskole med informasjon om registrering og orientering.
+Bekreftelse på opptak ved Norges Handelshøyskole. Se vedlagt dokument for informasjon om registrering og orientering.
+
+Endring i arbeidstidene
+Endring i arbeidstidene som vil tre i kraft neste uke. Sjekk e-posten din for mer informasjon.
+
+Informasjon om siste bransjenyheter, oppdatert informasjon.
+Informasjon om siste bransjenyheter.
+
+Påminnelse om å sende inn kvitteringer for utlegg med oppfordring til å gi beskjed hvis det er noen spørsmål eller problemer.
+Påminnelse om å sende inn kvitteringer for utlegg. Send inn kvitteringene så snart som mulig dersom det ikke er gjort.
+
+Informasjon om bedriftens CSR-policy
+Informasjon om bedriftens CSR-policy.
+
+Tilbud om gratis prøveuke på språkkurs og en oppfordring til å besøke nettsiden vår for å registrere deg, samt en bekreftelse på at vi vil følge opp med deg snart
+Tilbud om gratis prøveuke på språkkurs.
+
+Få tips til å utvikle teknologiske løsninger som kan bidra til å løse noen av de største utfordringene i verden i dag.
+Tips om hvordan teknologi kan bidra til å løse globale problemer.
+
+Ny funksjonalitet til nettstedet og oppfordring til å besøke nettstedet for mer informasjon.
+Ny funksjonalitet til vår nettside er levert.
+
+Oppdatering på vårt pågående tverrfaglige prosjekt med oppmuntring til alle ansatte om å fortsette å bidra og samarbeide for å sikre at prosjektet når sine mål.
+Oppdatering på pågående tverrfaglig prosjekt. Prosjektet går bra og har oppnådd mange gode resultater så langt.
+
+Anmeldelse av nytt hotell.
+Anmeldelse av det nye hotellet jeg har bodd på. Alt i alt, en flott opplevelse. Hotellet anbefales.
+
+Dette er en melding om viktigheten av å følge retningslinjene og forholdsreglene som er gitt av helsemyndighetene under pandemien, samt ta vare på din egen helse og velvære mens du jobber hjemmefra eller på kontoret.
+Påminnelse om å følge retningslinjene og forholdsreglene gitt av helsemyndighetene for å beskytte deg selv og andre mot spredning av pandemien. Ta også vare på din egen helse mens du jobber hjemmefra.
+
+Oppdagelsen av en ny planet.
+Kunngjørelse av oppdagelse av ny planet i vårt solsystem.
+
+Få tips til å lære mer om forskjellige religioner og trosretninger og utvide din horisont.
+Tips om hvordan du kan lære mer om forskjellige religioner og trosretninger.
+
+Arbeidsplan for produksjonsteamet, kommende måned.
+Arbeidsplan for produksjonsteamet for den kommende måneden. Sjekk dine oppgaver og følg tidsplanen
+
+Et spørsmål om anbefalinger til nye TV-serier fra en venn
+Jeg er på utkikk etter en ny TV-serie å se på. Har du noen anbefalinger?
+
+Ferieopplevelser
+Jeg vil høre om dine opplevelser og erfaringer fra ferien. I morgen tar vi noen minutter til å dele erfaringer om dere vil.
+
+Innføring av live chat-tjeneste for kundesupport, viktig informasjon.
+Ny live chat-tjeneste for kundesupport introduseres. Se gjennom supportalternativer på vår nettside.
+
+Tips for å organisere hjemmet fra IKEA kundeservice: Gir kunden tips for å organisere hjemmet og oppfordrer kunden til å abonnere på nyhetsbrevet for å få tilgang til eksklusive tips og triks.
+Vi vil gi deg tips for å organisere hjemmet ditt i vårt ukentlige nyhetsbrev. Besøk vår nettside for å abonnere.
+
+Oppdatert tidsplan for IT-prosjektet, justerte tidsrammer.
+Tidsplanen for IT-prosjektet er oppdatert. Sjekk den nye tidsplanen.
+
+Min erfaring med å bruke en ny reiseapp.
+Min erfaring med å bruke en ny reiseapp.
+
+Gjør deg klar for sommeren med IKEA fra IKEA kundeservice: Promoterer IKEAs utvalg av utemøbler, solskjerming og andre sommerprodukter og oppfordrer kunden til å besøke en IKEA-butikk eller sjekke ut produktene på nettsiden.
+Besøk din lokale IKEA-butikk eller nettside for å gjøre deg klar til å nyte sommeren.
+
+Få tips til å velge antrekk som passer perfekt til din kroppsform og stil.
+Tips om hvordan du kan kle deg for din kroppsform.
+
+Påminnelse om å avtale helsekontroll og en oppfordring til å ta vare på helsen din, samt en bekreftelse på at vi vil følge opp med deg hvis det er noen spørsmål eller bekymringer
+Påminnelse om å avtale helsekontrollen din.
+
+Invitasjon til GitHub-konferanse med presentasjoner og diskusjoner om ulike aspekter av GitHub-bruken og muligheten til å lære av bransjeeksperter
+Invitasjon til GitHub-konferanse neste måned. Ta kontakt for mer informasjon om registrering.
+
+Få inspirasjon til et sunnere kosthold med vår liste over fem matvarer som vil gi deg bedre helse.
+Liste over fem matvarer du bør inkludere i kostholdet ditt for bedre helse.
+
+Bekreftelse på oppmøte fra May til Ulrik: Bekrefter at vedkommende vil være tilstede på møtet og gir beskjed om å kontakte dem hvis det skulle skje endringer.
+Bekrefteles på oppmøte på møtet i morgen kl. 14:00.
+
+Søknad om sykemelding fra lege på grunn av helseproblemer som har påvirket arbeidsevnen.
+Jeg søker om sykemelding fra legen på grunn av helsetilstand som påvirker evne til å utføre arbeidsoppgaver effektivt. En kopi av sykemelding blir tilsendt når tilgjengelig.    
+
+Oppdatering på vårt siste Lean-prosjekt med analyse av eksisterende prosesser og identifisering av områder for forbedring ved å eliminere sløsing og øke effektiviteten.
+Oppdatering på siste Lean-prosjekt. En grundig analyse av eksisterende prosesser er gjort. Resultatet er at sløsing må elimineres og effektiviteten økes. Det arbeids for å implementere nye tiltak og metoder, mer informasjon kommer når analysen er ferdig. 
+
+Bekreftelse på påmelding til virtuelt møte og varsling om kommende lenke for deltakelse.
+Bekreftelse av din påmelding til kommende virtuelle møte. Vi vil sende lenke for å delta på møtet kort tid før møtet starter.
+
+Møteplanlegging i London fra Keyence ledelse.
+Planlegging av møte i London.
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+126
+126
+real: Påminnelse om fristen for å sende inn notater etter siste møte.
+pred: Oppdatering om frist for å sende inn notater etter vårt siste møte.
+Traceback (most recent call last):
+  File "/cluster/home/eliaseb/PycharmProjects/bachelor_gruppe_79/src/load_from_hub.py", line 72, in <module>
+    score = rg.compareRouge(labels[i], pred[i])
+  File "/cluster/home/eliaseb/PycharmProjects/bachelor_gruppe_79/src/rg.py", line 44, in compareRouge
+    scores = rouge_score.compute(predictions=pred_summaries_corrected, references=label_summaries_corrected)
+  File "/cluster/home/eliaseb/.local/lib/python3.9/site-packages/evaluate/module.py", line 432, in compute
+    self.add_batch(**inputs)
+  File "/cluster/home/eliaseb/.local/lib/python3.9/site-packages/evaluate/module.py", line 512, in add_batch
+    raise ValueError(error_msg) from None
+ValueError: Mismatch in the number of predictions (67) and references (63)
