@@ -37,7 +37,7 @@ def print_summary(idx):
     print()
     print(summary)
 
-print_summary(50)
+print_summary(40)
 
 print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 texts = [row["text"] for row in no_summary_dataset["test"]]
