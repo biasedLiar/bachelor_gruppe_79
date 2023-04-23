@@ -14,6 +14,8 @@ def correctFormat(summary, max_sentences=None):
     :param max_sentences: (int) Maximum sentences for each summary, the remaining sentences will be ignored.
     :return: String with each sentence of the summary seperated with a newline.
     """
+    if summary == None:
+        summary = ""
     doc = nlp_nb(summary)
     sentences = [sent.text for sent in doc.sents]
 
@@ -28,6 +30,7 @@ def correctFormatList(summary_list, max_sentences=None):
     summary_list_corrected = []
 
     for i in range(len(summary_list)):
+
         summary_list_corrected.append(correctFormat(summary_list[i], max_sentences=max_sentences))
 
     return summary_list_corrected
