@@ -3,6 +3,7 @@
 #SBATCH --account=ie-idi
 #SBATCH --time=02:00:00
 #SBATCH --gres=gpu:V10032:1
+#SBATCH --mem=12000
 #SBATCH --job-name="py"
 #SBATCH --output=log.out
 
