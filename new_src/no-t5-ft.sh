@@ -9,4 +9,6 @@
 
 module purge
 module load Anaconda3/2022.05
-python train.py -model_checkpoint north/t5_base_NCC_lm -model_type t5 -dataset_path BiasedLiar/nor_email_sum
+module load git-lfs/2.11.0
+python -c "from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')"
+python train.py -model_checkpoint north/t5_base_NCC_lm -model_type t5 -dataset_path BiasedLiar/nor_email_sum -save_online True

@@ -56,6 +56,7 @@ tconf = {
     "label_name": "label",
     "gold_label_name": "goldlabel",
     "logging_level": "debug",
+    "save_online" : "True",
 }
 
 # Update config based on input
@@ -166,3 +167,8 @@ trainer.train()  # Training start
 logging.info("TRAINING FINISHED")
 trainer.save_model(f"{model_name}-model")
 logging.info(f"MODEL SAVED LOCALLY TO FILE: {model_name}-model")
+
+print("Pushing to hub: ")
+
+model.push_to_hub(model_name)
+tokenizer.push_to_hub(model_name)

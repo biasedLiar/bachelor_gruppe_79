@@ -17,4 +17,4 @@ pip install spacy
 
 python -c "from huggingface_hub.hf_api import HfFolder; HfFolder.save_token('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')"
 python -m spacy download nb_core_news_sm
-python eval.py -model_checkpoint BiasedLiar/mt5-small-finetuned-cnn-news-finetuned-NO3 -dataset_path BiasedLiar/nor_email_sum
+python eval.py -model_checkpoint BiasedLiar/t5_base_NCC_lm-log -dataset_path BiasedLiar/nor_email_sum
