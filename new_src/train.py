@@ -45,6 +45,7 @@ tconf = {
     "model_checkpoint": None,
     "model_type": None,
     "dataset_path": None,
+    "model_save_name" : None, # Name of saved model. This is the name used to upload online, -local is appended when saving locally
     "dataset_type": "hf",  # hf indicates data is loaded from huggingface
     "max_input_length": 512,
     "max_target_length": 256,
@@ -56,7 +57,7 @@ tconf = {
     "label_name": "label",
     "gold_label_name": "goldlabel",
     "logging_level": "debug",
-    "save_online" : "True",
+    "save_online" : "y"
 }
 
 # Update config based on input
@@ -87,7 +88,7 @@ logging.basicConfig(
 )
 
 # Validate required configuration fields
-if tconf["model_checkpoint"] is None or tconf["model_type"] is None or tconf["dataset_path"] is None:
+if tconf["model_checkpoint"] is None or tconf["model_type"] is None or tconf["dataset_path"] is None or tconf["model_save_name"] is None:
     logging.error("Some of the required fields (model_checkpoint, model_type and dataset_path) is not set.")
     exit()
 
@@ -126,11 +127,10 @@ logging.debug(f"tokenized_datasets = {tokenized_datasets}")
 # Logging during training config
 logging_steps = len(tokenized_datasets["train"]) // tconf["batch_size"]
 logging.debug(f"logging_steps={logging_steps}")
-model_name = tconf["model_checkpoint"].split("/")[-1]
 
 # Setting up training arguments
 args = Seq2SeqTrainingArguments(
-    output_dir=f"{model_name}-log",
+    output_dir=f"{ tconf['model_save_name']}-log",
     evaluation_strategy="epoch",
     learning_rate=tconf["lr"],
     per_device_train_batch_size=tconf["batch_size"],
@@ -165,10 +165,10 @@ logging.debug(f"trainer={trainer}")
 logging.info("TRAINING STARTED")
 trainer.train()  # Training start
 logging.info("TRAINING FINISHED")
-trainer.save_model(f"{model_name}-model")
-logging.info(f"MODEL SAVED LOCALLY TO FILE: {model_name}-model")
+trainer.save_model(f"{tconf['model_save_name']}-local")
+logging.info(f"MODEL SAVED LOCALLY TO FILE: {tconf['model_save_name']}-model")
 
-print("Pushing to hub: ")
-
-model.push_to_hub(model_name)
-tokenizer.push_to_hub(model_name)
+if tconf["save_online"] == "y":
+    model.push_to_hub(tconf["model_save_name"])
+    tokenizer.push_to_hub(tconf["model_save_name"])
+    logging.info("Model pushed to hub")
