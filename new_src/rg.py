@@ -74,9 +74,9 @@ def getPredictions(summarizer, dataset, text_name):
     :param text_name: Name of the column with text being summarized in the dataset
     :return: List of the predictions from the dataset, each entry is a String
     """
-    predictions = []
-    for i in range(len(dataset)):
-        predictions += summarizer(dataset[i][text_name])[0]["summary_text"]
+    texts = [i[text_name] for i in dataset]
+    predictions = summarizer(texts)
+    predictions = [i["summary_text"] for i in predictions]
     return predictions
 
 
