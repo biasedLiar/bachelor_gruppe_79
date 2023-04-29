@@ -28,7 +28,7 @@ def preprocess_function(x):
         max_length=tconf["max_input_length"],
         truncation=True,
     )
-    if x[tconf["gold_label_name"]] != None:
+    if x[tconf["gold_label_name"]] is not None and len(x[tconf["gold_label_name"]].strip()) != 0:
         x[tconf["label_name"]] = x[tconf["gold_label_name"]]
         logging.debug("Gold label replaced label.")
     labels = tokenizer(
