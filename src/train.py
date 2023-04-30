@@ -5,7 +5,7 @@ import logging
 import utils
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, DataCollatorForSeq2Seq, \
-    Seq2SeqTrainer, GPTJForCausalLM, AutoModel
+    Seq2SeqTrainer
 
 
 def compute_metrics(eval_pred):
@@ -28,9 +28,10 @@ def preprocess_function(x):
         max_length=tconf["max_input_length"],
         truncation=True,
     )
-    if x[tconf["gold_label_name"]] is not None and len(x[tconf["gold_label_name"]].strip()) != 0:
+    if not utils.is_empty(x[tconf["gold_label_name"]]):
         x[tconf["label_name"]] = x[tconf["gold_label_name"]]
         logging.debug("Gold label replaced label.")
+
     labels = tokenizer(
         x[tconf["label_name"]],
         max_length=tconf["max_target_length"],
@@ -42,11 +43,9 @@ def preprocess_function(x):
 
 # Default training configuration
 tconf = {
-    "model_checkpoint": None,
-    "model_type": None,
-    "dataset_path": None,
-    "model_save_name" : None, # Name of saved model. This is the name used to upload online, -local is appended when saving locally
-    "dataset_type": "hf",  # hf indicates data is loaded from huggingface
+    "model_checkpoint": None,  # Must be from hf
+    "dataset_path": None,  # Must be from hf
+    "model_save_name": None,  # Name of saved model (online). Model is also saved locally with -local suffix
     "max_input_length": 512,
     "max_target_length": 256,
     "batch_size": 8,
@@ -57,68 +56,33 @@ tconf = {
     "label_name": "label",
     "gold_label_name": "goldlabel",
     "logging_level": "debug",
-    "save_online" : "y"
+    "save_online": "n"
 }
 
 # Update config based on input
-args = sys.argv
-for i in range(len(args)):
-    if args[i][0] == '-' and args[i][1] != '-':
-        val = args[i + 1]
-        if utils.is_int(val):
-            val = int(val)
-        elif utils.is_float(val):
-            val = float(val)
-        tconf[args[i][1:]] = val
+utils.update_dict_from_args(tconf, sys.argv)
 
 # Set logging configuration
-logging_level = logging.DEBUG
-if tconf["logging_level"] == "info":
-    logging_level = logging.INFO
-elif tconf["logging_level"] == "warning":
-    logging_level = logging.WARNING
-elif tconf["logging_level"] == "error":
-    logging_level = logging.ERROR
-elif tconf["logging_level"] == "critical":
-    logging_level = logging.CRITICAL
 logging.basicConfig(
-    level=logging_level,
+    level=utils.get_logging_level(tconf["logging_level"]),
     format="%(asctime)s %(levelname)s | %(message)s",
     datefmt="%d-%m-%Y %H:%M:%S"
 )
 
 # Validate required configuration fields
-if tconf["model_checkpoint"] is None or tconf["model_type"] is None or tconf["dataset_path"] is None or tconf["model_save_name"] is None:
+if tconf["model_checkpoint"] is None or tconf["dataset_path"] is None or tconf["model_save_name"] is None:
     logging.error("Some of the required fields (model_checkpoint, model_type and dataset_path) is not set.")
     exit()
-
 logging.info(f"Settings loaded successfully with the following settings:\n{tconf}")
 
-
 # Establishing the dataset
-if tconf["dataset_type"] == "hf":
-    dataset = load_dataset(tconf["dataset_path"])
-    logging.info(f"Dataset {tconf['dataset_path']} was loaded from HuggingFace.")
-else:
-    dataset = load_dataset(tconf["dataset_type"], data_files=tconf["dataset_path"])
-    logging.info(f"Dataset {tconf['dataset_path']} of type {tconf['dataset_type']} was loaded from local filesystem.")
-logging.debug(f"dataset = f{dataset}")
-
+dataset = load_dataset(tconf["dataset_path"])
+logging.info(f"Dataset {tconf['dataset_path']} was loaded from HuggingFace.")
 
 # Defining model and tokenizer. This process is model specific
-if tconf["model_type"] == "t5":
-    model = AutoModelForSeq2SeqLM.from_pretrained(tconf["model_checkpoint"])
-    tokenizer = AutoTokenizer.from_pretrained(tconf["model_checkpoint"])
-    logging.info(f"Model of type T5 was loaded from checkpoint {tconf['model_checkpoint']}.")
-elif tconf["model_type"] == "gptj":
-    model = GPTJForCausalLM.from_pretrained(tconf["model_checkpoint"])
-    tokenizer = AutoTokenizer.from_pretrained(tconf["model_checkpoint"])
-    logging.info(f"Model of type GPTJ was loaded from checkpoint {tconf['model_checkpoint']}.")
-else:
-    # using the auto classes
-    model = AutoModel.from_pretrained(tconf["model_checkpoint"])
-    tokenizer = AutoTokenizer.from_pretrained(tconf["model_checkpoint"])
-    logging.info(f"Model of type unknown was loaded from checkpoint {tconf['model_checkpoint']}.")
+model = AutoModelForSeq2SeqLM.from_pretrained(tconf["model_checkpoint"])
+tokenizer = AutoTokenizer.from_pretrained(tconf["model_checkpoint"])
+logging.info(f"Model was loaded from checkpoint {tconf['model_checkpoint']}.")
 
 # Tokenizing the dataset
 tokenized_datasets = dataset.map(preprocess_function)
