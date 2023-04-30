@@ -1,5 +1,8 @@
 import spacy
 import evaluate
+from transformers import pipeline
+from datasets import load_dataset
+
 
 nlp_nb = spacy.load("nb_core_news_sm")  # remember to download: python -m spacy download nb_core_news_sm
 rouge_score = evaluate.load("rouge")
@@ -14,8 +17,6 @@ def correctFormat(summary, max_sentences=None):
     :param max_sentences: (int) Maximum sentences for each summary, the remaining sentences will be ignored.
     :return: String with each sentence of the summary seperated with a newline.
     """
-    if summary == None:
-        summary = ""
     doc = nlp_nb(summary)
     sentences = [sent.text for sent in doc.sents]
 
@@ -30,7 +31,6 @@ def correctFormatList(summary_list, max_sentences=None):
     summary_list_corrected = []
 
     for i in range(len(summary_list)):
-
         summary_list_corrected.append(correctFormat(summary_list[i], max_sentences=max_sentences))
 
     return summary_list_corrected
@@ -65,7 +65,7 @@ def getLeadRougeScore(dataset, text_name, label_name, lead):
     return scores
 
 
-def getPredictions(summarizer, dataset, text_name):
+def getPredictions(summarizer, dataset, text_name, max_length):
     """
     Calculates summarization based on a summarizer object (from huggingface) for an entire dataset.
 
@@ -75,12 +75,17 @@ def getPredictions(summarizer, dataset, text_name):
     :return: List of the predictions from the dataset, each entry is a String
     """
     texts = [i[text_name] for i in dataset]
-    predictions = summarizer(texts)
+    predictions = summarizer(texts, max_length=max_length)
     predictions = [i["summary_text"] for i in predictions]
+
+    for i in range(len(predictions)):
+        row = predictions[i].replace("<extra_id_0>", "")
+        predictions[i] = row
+
     return predictions
 
 
-def getRougeScore(summarizer, dataset, text_name, label_name):
+def getRougeScore(summarizer, dataset, text_name, label_name, max_length):
     """
     Calculates summarization based on a summarizer object (from huggingface) for an entire dataset.
 
@@ -88,8 +93,13 @@ def getRougeScore(summarizer, dataset, text_name, label_name):
     :param dataset: Dataset to summarize. NB! Not a DatasetDict but normally a test dataset
     :param text_name: Name of the column with text being summarized in the dataset
     :param label_name: Name of the column with labels (summaries) in the dataset
+    :param max_length: Max length of summary in predictions
     :return: Rouge scores
     """
-    # TODO: Dobbeltsjekke at rekkefølgen på predictions er samme som den i datasettet
-    predictions = getPredictions(summarizer, dataset, text_name)
+    predictions = getPredictions(summarizer, dataset, text_name, max_length)
     return compareRouge(dataset[label_name], predictions)
+
+
+#summarizer = pipeline("summarization", model="BiasedLiar/t5_small_NCC_lm-normail")
+#dataset = load_dataset("BiasedLiar/nor_email_sum")
+#print(getRougeScore(summarizer, dataset["test"], "text", "label"))
