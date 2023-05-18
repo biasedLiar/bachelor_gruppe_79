@@ -38,7 +38,7 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for trening
 Eksempel bruk: `python src/train.py -model_save_name t5_base_NCC-normail -model_checkpoint north/t5_base_NCC -dataset_path BiasedLiar/nor_email_sum`
 
 # Evaluering
-src/eval.py benyttes for å evaluere en modell.  Kjør filen ved følgende kommando: 
+`src/eval.py` benyttes for å evaluere en modell.  Kjør filen ved følgende kommando: 
 
     python src/eval.py -param1 <value> -param2 <value> ... -paramN <value>
 Som antydet ved kjøringskommandoen er det flere mulige instillinger for evaluering:
@@ -54,3 +54,4 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for evaluer
 
 
 Eksempel bruk: `python src/eval.py -model_checkpoint BiasedLiar/t5_base_NCC-normail -dataset_path BiasedLiar/nor_email_sum`
+
