@@ -1,11 +1,12 @@
+# CODE BASED ON SUMMARIZATION COURSE BY HUGGINGFACE: https://huggingface.co/learn/nlp-course/chapter7/5?fw=pt
+
 import numpy as np
 import rg
 import sys
 import logging
 import utils
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, DataCollatorForSeq2Seq, \
-    Seq2SeqTrainer
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, DataCollatorForSeq2Seq, Seq2SeqTrainer
 
 
 def compute_metrics(eval_pred):
