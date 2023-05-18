@@ -16,15 +16,6 @@ def is_int(string):
         return False
 
 
-"""
-    Calculates summarization based on a summarizer object (from huggingface) for an entire dataset.
-
-    :param summarizer: Summarizer used when summarizing the text of the dataset
-    :param dataset: Dataset to summarize. NB! Not a DatasetDict but normally a test dataset
-    :param text_name: Name of the column with text being summarized in the dataset
-    :return: List of the predictions from the dataset, each entry is a String
-    """
-
 
 def update_dict_from_args(dictionary, args):
     """
