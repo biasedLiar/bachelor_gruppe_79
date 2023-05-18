@@ -99,7 +99,3 @@ def getRougeScore(summarizer, dataset, text_name, label_name, max_length):
     predictions = getPredictions(summarizer, dataset, text_name, max_length)
     return compareRouge(dataset[label_name], predictions)
 
-
-#summarizer = pipeline("summarization", model="BiasedLiar/t5_small_NCC_lm-normail")
-#dataset = load_dataset("BiasedLiar/nor_email_sum")
-#print(getRougeScore(summarizer, dataset["test"], "text", "label"))
