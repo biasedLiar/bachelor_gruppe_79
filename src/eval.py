@@ -9,7 +9,6 @@ import rg
 tconf = {
     "model_checkpoint": None,  # must be from hf hub
     "dataset_path": None,
-    "dataset_type": "hf",  # hf indicates data is loaded from huggingface
     "max_summary_length": 512,
     "input_name": "text",
     "label_name": "label",
