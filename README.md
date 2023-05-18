@@ -32,7 +32,7 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for trening
 |label_name|Navn på kolonne i datasettet som tilsvarer target/label (riktig output) under trening.|label|
 |gold_label_name|Navn på kolonne med gold labels i treningsdatasettet. Ignorer dette feltet dersom det kun er en label kolonne. |goldlabel|
 |logging_level|Hvilket level av logging. Enten `debug`, `info`, `warning`, `error` eller `critical`.|debug|
-|save_online|Dette feltet skal ha verdien `y` dersom modell skal lagres på huggingface etter trening er vellykket.|n|
+|save_online|Dette feltet skal ha verdien `y` dersom modell skal lagres på huggingface etter trening er vellykket. Husk å sette opp huggingface access token ved lagring online.|n|
 
 
 Eksempel bruk: `python src/train.py -model_save_name t5_base_NCC-normail -model_checkpoint north/t5_base_NCC -dataset_path BiasedLiar/nor_email_sum`
