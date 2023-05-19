@@ -22,8 +22,8 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for trening
 | model_checkpoint | Pre-trained modell som skal fine-tunes. Spesifiser IDen til modellen (fra huggingface) Eksempel: `north/t5_base_NCC`. *Dette feltet er obligatorisk*. |None|
 |dataset_path|Datasettet som skal brukes for å trene, må være fra huggingface. Spesifiser IDen til datasettet, for eksempel: `cnn_dailymail`. Datasettet må være inndelt i `test`, `validation` og `train`. *Dette feltet er obligatorisk*.|None|
 |model_save_name|Navnet til modellen som lagres etter trening er fullført. Lokalt blir modellen lagret med suffix -local og log lagres med suffix -log. På huggingface lagres modellen tilsvarende model_save_name. *Dette feltet er obligatorisk*.|None|
-|max_input_length| Lengste input lengde under trening. |512|
-|max_target_length|Lengste target (riktig output) under trening. |256|
+|max_input_length| Lengste input lengde under trening, i tokens. |512|
+|max_target_length|Lengste target (riktig output) under trening, i tokens. |256|
 |batch_size|Antall treningseksempler (par av input og riktig output) modellen prosesserer før modellparametere (vekter og _bias_) oppdateres under trening.|8|
 |num_train_epochs|Antall epoker spesifiserer hvor mange ganger en modell går igjennom hele treningsdatasettet under trening.|8|
 |lr|Learning rate|5.6e-5|
@@ -46,7 +46,7 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for evaluer
 |--|--|--|
 | model_checkpoint | Modell som skal evalueres. Spesifiser IDen til modellen (fra huggingface) Eksempel: `north/t5_base_NCC`. *Dette feltet er obligatorisk*. |None|
 |dataset_path|Datasettet som skal brukes for å evaluere, må være fra huggingface. Spesifiser IDen til datasettet, for eksempel: `cnn_dailymail`. Datasettet må ha inndelingen `test`, som brukes for evaluering. *Dette feltet er obligatorisk*.|None|
-|max_summary_length| Maks lengde for oppsummeringene som genereres ved evaluering. |256|
+|max_summary_length| Maks lengde for oppsummeringene som genereres ved evaluering, i tokens. |256|
 |input_name|Navn på kolonne i datasettet som tilsvarer input under trening.|text|
 |label_name|Navn på kolonne i datasettet som tilsvarer target/label (riktig input) under trening.|label|
 |gold_label_name|Navn på kolonne med gold labels i treningsdatasettet. Ignorer dette feltet dersom det kun er en label kolonne. |goldlabel|
