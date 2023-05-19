@@ -9,7 +9,7 @@ import rg
 tconf = {
     "model_checkpoint": None,  # must be from hf hub
     "dataset_path": None,
-    "max_summary_length": 512,
+    "max_summary_length": 256,
     "input_name": "text",
     "label_name": "label",
     "gold_label_name": "goldlabel",
