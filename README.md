@@ -46,7 +46,7 @@ Som antydet ved kjøringskommandoen er det flere mulige instillinger for evaluer
 |--|--|--|
 | model_checkpoint | Modell som skal evalueres. Spesifiser IDen til modellen (fra huggingface) Eksempel: `north/t5_base_NCC`. *Dette feltet er obligatorisk*. |None|
 |dataset_path|Datasettet som skal brukes for å evaluere, må være fra huggingface. Spesifiser IDen til datasettet, for eksempel: `cnn_dailymail`. Datasettet må ha inndelingen `test`, som brukes for evaluering. *Dette feltet er obligatorisk*.|None|
-|max_summary_length| Maks lengde for oppsummeringene som genereres ved evaluering. |512|
+|max_summary_length| Maks lengde for oppsummeringene som genereres ved evaluering. |256|
 |input_name|Navn på kolonne i datasettet som tilsvarer input under trening.|text|
 |label_name|Navn på kolonne i datasettet som tilsvarer target/label (riktig input) under trening.|label|
 |gold_label_name|Navn på kolonne med gold labels i treningsdatasettet. Ignorer dette feltet dersom det kun er en label kolonne. |goldlabel|
